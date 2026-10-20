@@ -14,6 +14,8 @@ Accept: application/json
 POST {{host}}/players
 Content-Type: application/json
 
+{ "pseudo": "Pixel", "coins": 500 }
+
 ### Séance 2 — MongoDB : catalogue complet
 GET {{host}}/games
 Accept: application/json
@@ -30,4 +32,14 @@ Accept: application/json
 GET {{host}}/games/stats
 Accept: application/json
 
-{ "pseudo": "Pixel", "coins": 500 }
+### Séance 3 — Redis : ajouter des points à un joueur
+POST {{host}}/leaderboard/Nova/points/100
+Content-Type: application/json
+
+### Séance 3 — Redis : Mettre un joueur en ligne
+POST {{host}}/online/Nova
+Content-Type: application/json
+
+### Séance 3 — Redis : Compter les joueurs en ligne
+GET {{host}}/online/count
+Accept: application/json
